@@ -1,0 +1,5 @@
+teste = [4, 10, 3, 10, 15, -2]
+algumIndice = 4
+valor = teste[2]
+
+print(valor + teste[algumIndice] + teste[4])

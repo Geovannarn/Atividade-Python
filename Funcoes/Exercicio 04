@@ -1,0 +1,15 @@
+def  diferenca(valor1, valor2):
+    return valor2 - valor1
+def quadrado(numero):
+    return numero ** 2
+def distancia(xa, ya, xb, yb):
+    dx = diferenca(xa, xb)
+    dy = diferenca(ya, yb)
+
+return math.sqrt(quadrado(dx) + quadrado(dy))
+
+#Teste 1
+print(distancia(0, 0, 3, 6))
+
+# Teste 2
+print(distancia(1, 5, 4, 6))

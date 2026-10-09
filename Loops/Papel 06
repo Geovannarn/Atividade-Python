@@ -1,0 +1,13 @@
+import random
+
+numeros = []
+
+for i in range(100):
+    numeros.append(random.randint(1, 100))
+
+for i in range(99):
+    if numeros[i] % 2 == 0:
+        print("Posição:", i)
+        print("Valor:", numeros[i])
+        print("Próximo:", numeros[i + 1])
+        break

@@ -1,0 +1,10 @@
+notaTrabalho = float(input("Digite a nota de trabalho: "))
+notaAtividade = float(input("Digite a nota de atividades: "))
+notaParticipacao = float(input("Digite a nota de participação de prova: "))
+
+media = (notaParticipacao * 0.5) + (notaAtividade * 0.2) + (notaTrabalho * 0.3)
+
+if media > 6.0:
+    print("APROVADO")
+else:
+    print("REPROVADO")

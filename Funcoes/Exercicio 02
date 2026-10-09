@@ -1,0 +1,12 @@
+def calcularMedia(nota1, nota2, nota3):
+    media = (nota1 + nota2 + nota3) / 3
+    aprovado = media >= 6
+    if aprovado:
+        return "Aprovado"
+    else:
+        return "Reprovado"
+resultadoAluno1 = calcularMedia(3, 6, 9)
+print(resultadoAluno1)
+
+resultadoAluno2 = calcularMedia(4, 3, 5)
+print(resultadoAluno2)

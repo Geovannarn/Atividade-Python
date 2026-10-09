@@ -1,0 +1,6 @@
+def calcularImposto(renda, rendaMinima, baseCalculo, baseAdicional):
+    taxaBasica = min(renda, rendaMinima)
+    taxaAdicional = max((renda-rendaMinima), 0)
+    return taxaBasica + (taxaAdicional * baseAdicional)
+meuImposto = calcularImposto(800, 150, 200, 100)
+print(meuImposto)

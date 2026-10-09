@@ -1,0 +1,46 @@
+from random import randint
+
+n = int(input("Digite o N: "))
+
+numeros = []
+
+for i in range(100):
+    numeros.append(randint(1, n))
+
+maior = max(numeros)
+menor = min(numeros)
+
+print("Maior:", maior)
+print("Menor:", menor)
+
+novaLista = []
+
+for numero in numeros:
+    if numero > n / 2:
+        novaLista.append(numero)
+
+print("Nova lista:", novaLista)
+
+numeros.clear()
+
+posicao = randint(0, len(novaLista) - 1)
+novaLista.pop(posicao)
+
+maior = max(novaLista)
+menor = min(novaLista)
+
+segundoMaior = None
+segundoMenor = None
+
+for numero in novaLista:
+
+    if numero < maior:
+        if segundoMaior is None or numero > segundoMaior:
+            segundoMaior = numero
+
+    if numero > menor:
+        if segundoMenor is None or numero < segundoMenor:
+            segundoMenor = numero
+
+print("Segundo maior:", segundoMaior)
+print("Segundo menor:", segundoMenor)

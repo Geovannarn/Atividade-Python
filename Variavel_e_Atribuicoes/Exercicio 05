@@ -1,0 +1,66 @@
+# Prixicliato de Citamina
+qtdePrixicliato = 3
+estoquePrixicliato = 44
+caixaPrixicliato = 30
+
+# Zitaropan
+qtdeZitaropan = 4
+estoqueZitaropan = 52
+caixaZitaropan = 60
+
+# Madozol
+qtdeMadozol = 1
+estoqueMadozol = 36
+caixaMadozol = 15
+
+# Tilazinan
+qtdeTilazinan = 1
+estoqueTilazinan = 14
+caixaTilazinan = 30
+
+necessarioPrixicliato = qtdePrixicliato * 30
+necessarioZitaropan = qtdeZitaropan * 30
+necessarioMadozol = qtdeMadozol * 30
+necessarioTilazinan = qtdeTilazinan * 30
+
+comprarPrixicliato = necessarioPrixicliato - estoquePrixicliato
+comprarZitaropan = necessarioZitaropan - estoqueZitaropan
+comprarMadozol = necessarioMadozol - estoqueMadozol
+comprarTilazinan = necessarioTilazinan - estoqueTilazinan
+
+if comprarPrixicliato < 0:
+    comprarPrixicliato = 0
+
+if comprarZitaropan < 0:
+    comprarZitaropan = 0
+
+if comprarMadozol < 0:
+    comprarMadozol = 0
+
+if comprarTilazinan < 0:
+    comprarTilazinan = 0
+
+caixasPrixicliato = comprarPrixicliato // caixaPrixicliato
+
+if comprarPrixicliato % caixaPrixicliato != 0:
+    caixasPrixicliato = caixasPrixicliato + 1
+
+caixasZitaropan = comprarZitaropan // caixaZitaropan
+
+if comprarZitaropan % caixaZitaropan != 0:
+    caixasZitaropan = caixasZitaropan + 1
+
+caixasMadozol = comprarMadozol // caixaMadozol
+
+if comprarMadozol % caixaMadozol != 0:
+    caixasMadozol = caixasMadozol + 1
+
+caixasTilazinan = comprarTilazinan // caixaTilazinan
+
+if comprarTilazinan % caixaTilazinan != 0:
+    caixasTilazinan = caixasTilazinan + 1
+
+print("Caixas de Prixicliato de Citamina:", caixasPrixicliato)
+print("Caixas de Zitaropan:", caixasZitaropan)
+print("Caixas de Madozol:", caixasMadozol)
+print("Caixas de Tilazinan:", caixasTilazinan)

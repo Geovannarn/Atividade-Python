@@ -1,0 +1,16 @@
+numeros = [5, 2, 8, 1, 4, 3, 10, 7, 6, 9]
+
+ordenado = False
+
+while not ordenado:
+    ordenado = True
+
+    for i in range(9):
+        if numeros[i] > numeros[i + 1]:
+            temporario = numeros[i]
+            numeros[i] = numeros[i + 1]
+            numeros[i + 1] = temporario
+
+            ordenado = False
+
+print(numeros)

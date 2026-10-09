@@ -1,0 +1,13 @@
+estoque = ["sabão", "amaciante", "detergente", "desinfetante", "sabão em pedra", "limpa vidros"]
+elem = "detergente"
+
+if elem in estoque:
+    indice = estoque.index(elem)
+
+    if indice >= 0 and indice < len(estoque):
+
+        estoque.pop(indice)
+        print(estoque)
+
+else:
+    print("O elemento não existe.")

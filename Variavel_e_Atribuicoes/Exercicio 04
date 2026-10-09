@@ -1,0 +1,16 @@
+tArea = float(input("Digite o tamanho da área em metros quadrados: "))
+cobTinta = float(input("Digite a cobertura da tinta em litros por metro quadrado: "))
+tamLata = float(input("Digite o tamanho da lata em litros: "))
+valLata = float(input("Digite o valor da lata: "))
+
+litrosNecessarios = tArea / cobTinta
+
+qtdLatas = int(litrosNecessarios // tamLata)
+
+if litrosNecessarios % tamLata != 0:
+    qtdLatas = qtdLatas + 1
+
+valorTotal = qtdLatas * valLata
+
+print("Quantidade de latas:", qtdLatas)
+print("Valor total:", valorTotal)

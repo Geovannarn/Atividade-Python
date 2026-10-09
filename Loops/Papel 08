@@ -1,0 +1,8 @@
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for i in range(5):
+    temporario = numeros[i]
+    numeros[i] = numeros[9 - i]
+    numeros[9 - i] = temporario
+
+print(numeros)

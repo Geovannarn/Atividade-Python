@@ -1,0 +1,17 @@
+salario = float(input("Digite o salário: "))
+codigo = int(input("Digite o código do cargo: "))
+
+if codigo == 101:
+    novoSalario = salario * 1.10
+elif codigo == 102:
+    novoSalario = salario * 1.20
+elif codigo == 103:
+    novoSalario = salario * 1.30
+else:
+    novoSalario = salario * 1.40
+
+diferenca = novoSalario - salario
+
+print("Salário antigo:", salario)
+print("Novo salário:", novoSalario)
+print("Diferença:", diferenca)

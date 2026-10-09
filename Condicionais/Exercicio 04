@@ -1,0 +1,19 @@
+prim = 20
+sec = 10
+
+if (prim < sec):
+    prim = prim / 2
+
+if (prim < 2 * sec):
+    prim = prim * 2
+    sec = sec / 2
+else:
+    prim = prim + 1
+    sec = sec - 1
+
+elasSaoIguais = (prim == sec)
+
+if (elasSaoIguais):
+    prim = prim + 1
+
+print(prim, sec)

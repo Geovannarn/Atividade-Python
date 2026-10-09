@@ -1,0 +1,12 @@
+estoque = ["sabão", "amaciante", "detergente", "desinfetante", "sabão em pedra", "limpa vidros"]
+elem = "Alcool"
+
+indice = estoque.index("detergente")
+
+temp1 = estoque[0:indice + 1]
+temp2 = estoque[indice + 1:len(estoque)]
+temp1.append(elem)
+
+estoque = temp1 + temp2
+print(estoque)
+

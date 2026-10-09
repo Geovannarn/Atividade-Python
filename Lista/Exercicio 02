@@ -1,0 +1,13 @@
+teste = [4, 10, 3, 10, 15, -2]
+indice = 0
+
+teste[indice] = 0
+indice = indice + 1
+
+teste[indice] = 0
+indice = indice + 1
+
+teste[indice] = 0
+indice = indice + 1
+
+teste[indice] = 0

@@ -1,0 +1,5 @@
+ENDERECO_SERVIDOR = "localhost"
+CAMINHO_BANCO = "/banco/dados"
+
+print("ENDERECO_SERVIDOR")
+print("CAMINHO_BANCO")

@@ -1,0 +1,154 @@
+estoque = [ 
+    ["Arroz 5kg", 28.90, 12],
+    ["Feijão 1kg", 8.50, 30],
+    ["Óleo de Soja 900ml", 7.20, 4],
+    ["Açúcar 5kg", 22.00, 0],
+    ["Café 500g", 15.90, 8],
+]
+
+
+def listar_produtos():
+    print("\n=== Produtos em estoque ===")
+
+    for produto in estoque:
+        nome = produto[0]
+        preco = produto[1]
+        quantidade = produto[2]
+
+        if quantidade == 0:
+            print(f"{nome} - R$ {preco:.2f} - ESGOTADO")
+        else:
+            print(f"{nome} - R$ {preco:.2f} - Quantidade: {quantidade}")
+
+
+def cadastrar_produto():
+    print("\n=== Cadastrar produto ===")
+
+    nome = input("Digite o nome do produto: ")
+
+    for produto in estoque:
+        if produto[0].lower() == nome.lower():
+            print("Esse produto já está cadastrado.")
+            return
+
+    preco = float(input("Digite o preço do produto: "))
+    quantidade = int(input("Digite a quantidade inicial: "))
+
+    novo_produto = [nome, preco, quantidade]
+    estoque.append(novo_produto)
+
+    print("Produto cadastrado com sucesso!")
+
+
+def buscar_produto():
+    print("\n=== Buscar produto ===")
+
+    busca = input("Digite o nome ou parte do nome: ").lower()
+    encontrado = False
+
+    for produto in estoque:
+        nome = produto[0]
+
+        if busca in nome.lower():
+            print(
+                f"{nome} - R$ {produto[1]:.2f} - Quantidade: {produto[2]}"
+            )
+            encontrado = True
+
+    if not encontrado:
+        print("Nenhum produto encontrado.")
+
+
+def valor_total_estoque():
+    print("\n=== Valor total do estoque ===")
+
+    total = 0
+
+    for produto in estoque:
+        preco = produto[1]
+        quantidade = produto[2]
+
+        total += preco * quantidade
+
+    print(f"Valor total do estoque: R$ {total:.2f}")
+
+
+def estoque_baixo():
+    print("\n=== Produtos com estoque baixo ===")
+
+    limite = int(input("Digite o limite de estoque: "))
+    encontrado = False
+
+    for produto in estoque:
+        nome = produto[0]
+        quantidade = produto[2]
+
+        if quantidade <= limite:
+            print(f"{nome} - Quantidade: {quantidade}")
+            encontrado = True
+
+    if not encontrado:
+        print("Nenhum produto está com estoque baixo.")
+
+
+def registrar_venda():
+    print("\n=== Registrar venda ===")
+
+    nome = input("Digite o nome do produto: ")
+    quantidade_vendida = int(input("Digite a quantidade vendida: "))
+
+    for produto in estoque:
+        if produto[0].lower() == nome.lower():
+
+            if quantidade_vendida > produto[2]:
+                print("Não há produto suficiente em estoque.")
+                return
+
+            produto[2] -= quantidade_vendida
+
+            valor_venda = produto[1] * quantidade_vendida
+
+            print("Venda realizada com sucesso!")
+            print(f"Valor total da venda: R$ {valor_venda:.2f}")
+            print(f"Quantidade restante: {produto[2]}")
+            return
+
+    print("Produto não encontrado.")
+
+
+while True:
+    print("\n=== Mercearia ===")
+    print("1 - Listar todos os produtos")
+    print("2 - Cadastrar novo produto")
+    print("3 - Buscar produto pelo nome")
+    print("4 - Ver valor total do estoque")
+    print("5 - Ver produtos com estoque baixo")
+    print("6 - Registrar uma venda")
+    print("0 - Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == "1":
+        listar_produtos()
+
+    elif opcao == "2":
+        cadastrar_produto()
+
+    elif opcao == "3":
+        buscar_produto()
+
+    elif opcao == "4":
+        valor_total_estoque()
+
+    elif opcao == "5":
+        estoque_baixo()
+
+    elif opcao == "6":
+        registrar_venda()
+
+    elif opcao == "0":
+        print("Programa encerrado. Até logo!")
+        break
+
+    else:
+        print("Opção inválida. Tente novamente.")

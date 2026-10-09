@@ -1,0 +1,8 @@
+estoque = ["sabão", "amaciante", "detergente", "desinfetante", "sabão em pedra", "limpa vidros"]
+
+estoque.pop()
+estoque.pop(0)
+estoque.pop()
+estoque.pop()
+
+print(estoque)

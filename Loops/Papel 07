@@ -1,0 +1,9 @@
+numeros = [10, 5, 8, -2, 7]
+
+tem_negativo = False
+
+for numero in numeros:
+    if numero < 0:
+        tem_negativo = True
+
+print(tem_negativo)
